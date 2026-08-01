@@ -1,1 +1,466 @@
-{}
+{
+  "totalMark": 33,
+  "wsosSections": {
+    "1": "Work organization and management",
+    "2": "Communication and interpersonal skills",
+    "3": "Design Implementation",
+    "4": "Frontend Development",
+    "5": "Backend Development"
+  },
+  "subCriterions": [
+    {
+      "name": "Database structure",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "The file db_dump.sql is provided.",
+          "maxMark": 0.5,
+          "wsosSection": 2,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Data from menu.csv is imported correctly.",
+          "maxMark": 0.6,
+          "wsosSection": 2,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "judgement",
+          "description": "Database structure is normalized",
+          "maxMark": 1.5,
+          "wsosSection": 5,
+          "judgementScoreDescription": [
+            "Not normalized, a lot of redundant data/fields",
+            "Normalized with second normal form",
+            "Normalized with third normal form (partial)",
+            "Normalized with third normal form (full)"
+          ]
+        },
+        {
+          "type": "judgement",
+          "description": "Database column type is reasonable defined",
+          "maxMark": 1.5,
+          "wsosSection": 5,
+          "judgementScoreDescription": [
+            "All columns use string type or text type",
+            "Columns are basically in their related types. But numbers for int/float may not be optimized for operation.",
+            "Columns are in their related types. For example, int, float, text, Boolean, JSON. And are in proper length.",
+            "Columns are in their related types. And the length of each type matches the use case. Status columns are easy to understand and maintained."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Home View",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Three buttons are implemented.",
+          "maxMark": 0.6,
+          "wsosSection": 3,
+          "extraDescription": "\"Dine In\", \"Take Away\" and \"My Orders\"",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The drawer functions correctly after clicking the \"Dine In\" button.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "extraDescription": "The drawer can be displayed and closed correctly.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "When the \"Scan Now\" button is clicked, the device camera is invoked.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "extraDescription": "Code implemented.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "QR codes are parsed correctly.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "extraDescription": "The Menu view is displayed with the correct table number.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "If image decoding fails or the decoded value is not a valid table payload, display exactly \"QR code parsing failed\" and remain on the home view.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "extraDescription": "Images table-0.png, table-11.png and wrong.png shall fail to parse.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The takeaway reference shall be a randomly generated 6-digit numeric string and must be unique.",
+          "maxMark": 0.6,
+          "wsosSection": 5,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Menu View",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "The header is implemented correctly.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "extraDescription": "Fixed at the top",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Display is correct on mobile and tablet devices.",
+          "maxMark": 0.8,
+          "wsosSection": 3,
+          "extraDescription": "On mobile devices, each row displays one dish data;",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The dish information displays correctly.",
+          "maxMark": 0.8,
+          "wsosSection": 5,
+          "extraDescription": "A dish contains an image, name, category, unit price, stock status, selected quantity, add control and subtract control.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The stock value shows correctly.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "extraDescription": "Do not display the numeric stock value.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The add control increases quantity by one.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "extraDescription": "The maximum selected quantity for one dish is 10",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The subtract control decreases quantity by one but must never reduce it below 0.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "A dish with quantity 0 must not exist in the cart.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "A dish with stock 0 cannot be added.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Every quantity change must immediately update the bottom-bar dish quantity and total price.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The bottom bar  is implemented correctly.",
+          "maxMark": 0.6,
+          "wsosSection": 3,
+          "extraDescription": "Fixed at the bottom",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "If the cart is empty, clicking back to home button returns directly to the home view.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "If the cart contains dishes, clicking back to home button opens a dialog containing exactly \"Return to the home page? Unsubmitted cart items will be cleared.\".",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "extraDescription": "The actions are \"Cancel\" and \"Return Home\".",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Clicking \"Return Home\" clears all unsubmitted cart and service-context data before opening the home view.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "The cart drawer is implemented correctly.",
+          "maxMark": 0.8,
+          "wsosSection": 3,
+          "extraDescription": "shown by clicking \"Cart\" or \"Checkout\".",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The cart drawer displays all selected dishes, showing each item’s image, name, unit price, quantity and line subtotal.",
+          "maxMark": 0.8,
+          "wsosSection": 3,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The drawer supports adding, subtracting and deleting dishes.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "A dish will be removed from the cart when its quantity is reduced to zero.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Refreshing the menu must restore every cart item, quantity and the current table or take-away reference.",
+          "maxMark": 1,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Checkout and order processing",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Clicking \"Confirm\" with an empty cart displays exactly \"Please select at least one dish\" and must not show the result view.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Stock verification is performed before order submission.",
+          "maxMark": 1,
+          "wsosSection": 5,
+          "extraDescription": "If the stock quantity of any dish added to the cart becomes insufficient when submitting the order, terminate the submission process, show the prompt \"Some dishes in your cart are out of stock\", and highlight the corresponding dishes",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Stock must never become negative.",
+          "maxMark": 0.6,
+          "wsosSection": 5,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "When the \"Confirm\" button is clicked to submit data, no page reload action occurs.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "After a successful order, clear the stored cart and open the result view.",
+          "maxMark": 0.8,
+          "wsosSection": 5,
+          "extraDescription": "Data is stored in the database.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Result View",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "The result view displays the table or take-away reference.",
+          "maxMark": 0.5,
+          "wsosSection": 3,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The result view displays the order number and ordered time.",
+          "maxMark": 0.5,
+          "wsosSection": 3,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Every purchased dish displays image, dish name, unit price and quantity.",
+          "maxMark": 0.5,
+          "wsosSection": 5,
+          "extraDescription": "Data is retrieved from the database.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Line subtotals and the order total match the persisted order data.",
+          "maxMark": 0.6,
+          "wsosSection": 5,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "My Orders view",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "List all orders submitted by the current device in descending order of ordered time.",
+          "maxMark": 0.6,
+          "wsosSection": 3,
+          "extraDescription": "Each order entry shall display the order number, ordered time and total amount.",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "Clicking an order entry opens the result view and displays the detailed data of the corresponding order.",
+          "maxMark": 0.6,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Application Functionality",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Home, menu and result views change without a full document reload.",
+          "maxMark": 1,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "The drawer animations are implemented correctly.",
+          "maxMark": 1,
+          "wsosSection": 3,
+          "extraDescription": "Its show and hide animations are slide-in and slide-out transitions originating from the edge of the viewport",
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "measurement",
+          "description": "All prices shown to the customer must use exactly two decimal places.",
+          "maxMark": 0.8,
+          "wsosSection": 4,
+          "calculation": {
+            "type": "pass-or-fail"
+          }
+        },
+        {
+          "type": "judgement",
+          "description": "Quality of drawer, dialog and interaction feedback",
+          "maxMark": 1,
+          "wsosSection": 4,
+          "judgementScoreDescription": [
+            "Overlays or feedback states are missing, obstructive or difficult to operate.",
+            "Core overlays work but transitions, spacing or state feedback are inconsistent.",
+            "Overlays are clear and responsive with good feedback for most interactions.",
+            "Drawer, dialog and feedback states are smooth, precise and consistently support the ordering flow."
+          ]
+        }
+      ]
+    }
+  ]
+}
